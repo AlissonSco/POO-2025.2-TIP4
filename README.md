@@ -40,4 +40,44 @@ Este repositório está contém  **3 listas de exercícios**, conforme os capít
 
 ## 🛠️ Linguagem e Ferramentas  
 - **Java** → Linguagem de Programação  
-- **Eclipse IDE** → Ambiente de desenvolvimento usado para criação e execução dos códigos  
+- **Eclipse IDE** → Ambiente de desenvolvimento usado para criação e execução dos códigos
+
+  ## 🗂 Estrutura do Repositório
+
+```text
+.
+│
+├── Lista-01/
+│   ├── Exercicios-Resolvidos/
+│   │   ├── Q01/
+│   │   ├── Q02/
+│   │   ├── ... Q10/
+│   │
+│   ├── Exercicios-Propostos/
+│   │   ├── Q01/
+│   │   ├── Q02/
+│   │   ├── ... Q05/
+│   │
+│   └── README.md
+│
+├── Lista-02/
+│   ├── Exercicios-Resolvidos/
+│   │   ├── Q01/
+│   │   ├── Q02/
+│   │   ├── ... Q10/
+│   │
+│   ├── Exercicios-Propostos/
+│   │   ├── Q01/
+│   │   ├── Q02/
+│   │   ├── ... Q05/
+│   │
+│   └── README.md
+│
+├── Lista-03/
+│   ├── Exercicios-Resolvidos/
+│   │   ├── Q01/
+│   │   ├── Q02/
+│   │   ├── ... Q10/
+│   │
+│   └── README.md
+└── README.md
