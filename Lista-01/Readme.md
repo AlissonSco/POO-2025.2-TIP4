@@ -6,7 +6,6 @@
 ## 📘 Capítulo 3 - Estrutura Sequencial
 
 
-
 ## 📌 Exercícios Resolvidos
 
 | Nº   | Enunciado                                                                                     |
