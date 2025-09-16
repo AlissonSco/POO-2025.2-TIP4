@@ -15,9 +15,9 @@ public class Principal {
 		n2 = sc.nextInt();	    
 		
 		if (n1>n2) {
-			System.out.println("n1 (" + n1 + ") é maior do que n2 (" + n2 + ")");
+			System.out.println("n2 (" + n2 + ") é menor do que n1 (" + n1 + ")");
 		} else {
-			System.out.println("n2 (" + n2 + ") é maior do que n1 (" + n1 + ")");
+			System.out.println("n1 (" + n1 + ") é menor do que n2 (" + n2 + ")");
 		}
 	}
 }
