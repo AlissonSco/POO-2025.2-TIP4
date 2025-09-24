@@ -1,39 +1,73 @@
 package br.edu.principal;
 
+
+
 import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        double totalVista = 0;
-        double totalPrazo = 0;
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("\n--- Funcionário " + i + " ---");
 
-        for (int i = 1; i <= 15; i++) {
-            System.out.println("Transação " + i);
-            System.out.print("Digite o código (V para à vista, P para a prazo): ");
-            String codigo = sc.next().toUpperCase();
+            System.out.print("Digite o código do funcionário: ");
+            int codigo = sc.nextInt();
 
-            System.out.print("Digite o valor da transação: ");
-            double valor = sc.nextDouble();
+            System.out.print("Número de horas trabalhadas: ");
+            int horas = sc.nextInt();
 
-            if (codigo.equals("V")) {
-                totalVista += valor;
-            } else if (codigo.equals("P")) {
-                totalPrazo += valor;
-            } else {
-                System.out.println("Código inválido! Transação ignorada.");
-                i--;
+            char turno = ' ';
+            while (turno != 'M' && turno != 'V' && turno != 'N') {
+                System.out.print("Turno (M - matutino, V - vespertino, N - noturno): ");
+                String t = sc.next().trim().toUpperCase();
+                if (!t.isEmpty()) {
+                    turno = t.charAt(0);
+                }
+                if (turno != 'M' && turno != 'V' && turno != 'N') {
+                    System.out.println("Turno inválido. Informe M, V ou N.");
+                }
             }
+
+            char categoria = ' ';
+            while (categoria != 'O' && categoria != 'G') {
+                System.out.print("Categoria (O - operário, G - gerente): ");
+                String c = sc.next().trim().toUpperCase();
+                if (!c.isEmpty()) {
+                    categoria = c.charAt(0);
+                }
+                if (categoria != 'O' && categoria != 'G') {
+                    System.out.println("Categoria inválida. Informe O ou G.");
+                }
+            }
+
+            double valorHora;
+            if (categoria == 'O') {
+                valorHora = (turno == 'N') ? 18.0 : 15.0;
+            } else {
+                valorHora = (turno == 'N') ? 35.0 : 30.0;
+            }
+
+            double salarioInicial = horas * valorHora;
+            double auxAlimentacao;
+            if (salarioInicial <= 450.0) {
+                auxAlimentacao = salarioInicial * 0.20;
+            } else if (salarioInicial <= 700.0) {
+                auxAlimentacao = salarioInicial * 0.15;
+            } else {
+                auxAlimentacao = salarioInicial * 0.10;
+            }
+
+            double salarioFinal = salarioInicial + auxAlimentacao;
+
+            System.out.println("Código: " + codigo);
+            System.out.println("Horas trabalhadas: " + horas);
+            System.out.println("Valor da hora: R$ " + valorHora);
+            System.out.println("Salário inicial: R$ " + salarioInicial);
+            System.out.println("Auxílio alimentação: R$ " + auxAlimentacao);
+            System.out.println("Salário final: R$ " + salarioFinal);
         }
 
-        double totalCompras = totalVista + totalPrazo;
-        double primeiraPrestacao = totalPrazo / 3;
-
-        System.out.println("\nResumo das transações:");
-        System.out.println("Total das compras à vista: R$ " + totalVista);
-        System.out.println("Total das compras a prazo: R$ " + totalPrazo);
-        System.out.println("Total das compras efetuadas: R$ " + totalCompras);
-        System.out.println("Valor da primeira prestação das compras a prazo: R$ " + primeiraPrestacao);
+        sc.close();
     }
 }
